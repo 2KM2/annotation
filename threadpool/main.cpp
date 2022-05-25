@@ -19,11 +19,11 @@ void my_pending(const struct threadpool_task *task)
 int main()
 {
 
- threadpool_t *thrd_pool = threadpool_create(3, 1024); // 创建                            
+    threadpool_t *thrd_pool = threadpool_create(48, 1024); // 创建                            
     struct threadpool_task task;
     unsigned long long i;
                                
-   for (i = 0; i < 10; i++)
+   for (i = 0; i < 10000; i++)
    {
        task.routine = &my_routine;                                             
        task.context = reinterpret_cast<void *>(i);                             
